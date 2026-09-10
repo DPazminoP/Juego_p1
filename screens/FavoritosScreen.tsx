@@ -13,7 +13,7 @@ export default function FavoritosScreen({navigation}:any) {
   
 
   return (
-    <ImageBackground source={{uri: "https://i.postimg.cc/dtcCdCnX/mascotas.jpg"}} style={styles.container}>
+    <ImageBackground source={{uri: "https://i.postimg.cc/zDQtrv6Q/pikura-pixel-art-7284052-1920.png"}} style={styles.container}>
       
         <Text style={styles.title}>🎮 Lista de Juegos Favoritos 🎮</Text>
         
