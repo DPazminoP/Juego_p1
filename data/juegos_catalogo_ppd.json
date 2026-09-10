@@ -1,0 +1,24 @@
+{
+  "juegos": [
+    { "id": 1, "nombre": "Battle Quest", "genero": "Acción", "image": "https://picsum.photos/200/300?random=1" },
+    { "id": 2, "nombre": "Mystic Lands", "genero": "Aventura", "image": "https://picsum.photos/200/300?random=2" },
+    { "id": 3, "nombre": "Speed Racers", "genero": "Carreras", "image": "https://picsum.photos/200/300?random=3" },
+    { "id": 4, "nombre": "Puzzle Master", "genero": "Rompecabezas", "image": "https://picsum.photos/200/300?random=4" },
+    { "id": 5, "nombre": "Galaxy Wars", "genero": "Ciencia Ficción", "image": "https://picsum.photos/200/300?random=5" },
+    { "id": 6, "nombre": "Fantasy Heroes", "genero": "RPG", "image": "https://picsum.photos/200/300?random=6" },
+    { "id": 7, "nombre": "Soccer Stars", "genero": "Deportes", "image": "https://picsum.photos/200/300?random=7" },
+    { "id": 8, "nombre": "Zombie Survival", "genero": "Terror", "image": "https://picsum.photos/200/300?random=8" },
+    { "id": 9, "nombre": "Dragon Slayer", "genero": "Acción", "image": "https://picsum.photos/200/300?random=9" },
+    { "id": 10, "nombre": "Hidden Treasures", "genero": "Aventura", "image": "https://picsum.photos/200/300?random=10" },
+    { "id": 11, "nombre": "Street Fighters", "genero": "Lucha", "image": "https://picsum.photos/200/300?random=11" },
+    { "id": 12, "nombre": "Cyber Run", "genero": "Carreras", "image": "https://picsum.photos/200/300?random=12" },
+    { "id": 13, "nombre": "Mind Bender", "genero": "Rompecabezas", "image": "https://picsum.photos/200/300?random=13" },
+    { "id": 14, "nombre": "Space Odyssey", "genero": "Ciencia Ficción", "image": "https://picsum.photos/200/300?random=14" },
+    { "id": 15, "nombre": "Kingdom Quest", "genero": "RPG", "image": "https://picsum.photos/200/300?random=15" },
+    { "id": 16, "nombre": "Basketball Legends", "genero": "Deportes", "image": "https://picsum.photos/200/300?random=16" },
+    { "id": 17, "nombre": "Haunted Mansion", "genero": "Terror", "image": "https://picsum.photos/200/300?random=17" },
+    { "id": 18, "nombre": "Alien Invasion", "genero": "Acción", "image": "https://picsum.photos/200/300?random=18" },
+    { "id": 19, "nombre": "Jungle Adventure", "genero": "Aventura", "image": "https://picsum.photos/200/300?random=19" },
+    { "id": 20, "nombre": "Chess Masters", "genero": "Estrategia", "image": "https://picsum.photos/200/300?random=20" }
+  ]
+}
