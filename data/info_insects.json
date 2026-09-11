@@ -1,0 +1,324 @@
+[
+  {
+    "nombre": "Abeja de la miel",
+    "especie": "Apis mellifera",
+    "informacion": "Insecto polinizador social muy importante para la producción de alimentos.",
+    "habitat": "Se encuentra en jardines, campos y bosques de todo el mundo. Vive en colmenas naturales o artificiales y también en zonas rurales y urbanas.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Honeybee.jpg"
+  },
+  {
+    "nombre": "Hormiga",
+    "especie": "Formicidae",
+    "informacion": "Insecto social que vive en colonias organizadas con diferentes roles.",
+    "habitat": "Presente en casi todo el mundo, en suelos, árboles y viviendas humanas, especialmente en climas templados y tropicales.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Ant.jpg"
+  },
+  {
+    "nombre": "Mariposa monarca",
+    "especie": "Danaus plexippus",
+    "informacion": "Famosa por sus migraciones largas y sus alas color naranja y negro.",
+    "habitat": "Habita praderas, jardines y zonas abiertas de América del Norte y Central.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Monarch_Butterfly.jpg"
+  },
+  {
+    "nombre": "Mariquita",
+    "especie": "Coccinella septempunctata",
+    "informacion": "Pequeño escarabajo rojo con puntos negros, útil para controlar plagas.",
+    "habitat": "Vive en jardines, cultivos y zonas verdes en todo el mundo.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/5/56/Ladybug.jpg"
+  },
+  {
+    "nombre": "Mosca doméstica",
+    "especie": "Musca domestica",
+    "informacion": "Insecto común asociado a ambientes humanos y residuos.",
+    "habitat": "Presente en todo el mundo, especialmente en ciudades, hogares y zonas con basura.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Housefly.jpg"
+  },
+  {
+    "nombre": "Mosquito",
+    "especie": "Culicidae",
+    "informacion": "Insecto volador que se alimenta de sangre y puede transmitir enfermedades.",
+    "habitat": "Vive cerca de agua estancada en zonas tropicales y templadas, incluyendo áreas urbanas.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Mosquito.jpg"
+  },
+  {
+    "nombre": "Libélula",
+    "especie": "Anisoptera",
+    "informacion": "Insecto volador depredador con gran habilidad para volar.",
+    "habitat": "Se encuentra cerca de ríos, lagos y humedales en todo el mundo.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Dragonfly.jpg"
+  },
+  {
+    "nombre": "Saltamontes",
+    "especie": "Caelifera",
+    "informacion": "Insecto herbívoro conocido por sus saltos largos.",
+    "habitat": "Habita campos, praderas y zonas agrícolas en muchos países.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Grasshopper.jpg"
+  },
+  {
+    "nombre": "Grillo",
+    "especie": "Gryllidae",
+    "informacion": "Conocido por el sonido que produce al frotar sus alas.",
+    "habitat": "Se encuentra en jardines, campos y a veces dentro de casas.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Cricket.jpg"
+  },
+  {
+    "nombre": "Escarabajo rinoceronte",
+    "especie": "Dynastinae",
+    "informacion": "Escarabajo fuerte con cuernos prominentes.",
+    "habitat": "Bosques tropicales y subtropicales, especialmente en América y Asia.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Rhinoceros_beetle.jpg"
+  },
+
+  {
+    "nombre": "Cucaracha",
+    "especie": "Blattodea",
+    "informacion": "Insecto resistente que puede sobrevivir en condiciones extremas.",
+    "habitat": "Frecuente en ambientes urbanos, cocinas y lugares húmedos.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Cockroach.jpg"
+  },
+  {
+    "nombre": "Termita",
+    "especie": "Isoptera",
+    "informacion": "Insecto social que se alimenta de madera.",
+    "habitat": "Zonas tropicales y templadas, tanto en bosques como en construcciones humanas.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Termite.jpg"
+  },
+  {
+    "nombre": "Avispa",
+    "especie": "Vespidae",
+    "informacion": "Insecto volador con aguijón, puede ser agresivo.",
+    "habitat": "Se encuentra en bosques, jardines y áreas urbanas.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Wasp.jpg"
+  },
+  {
+    "nombre": "Mantis religiosa",
+    "especie": "Mantis religiosa",
+    "informacion": "Depredador que caza otros insectos.",
+    "habitat": "Vive en vegetación, jardines y campos en climas cálidos.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Mantis.jpg"
+  },
+  {
+    "nombre": "Polilla",
+    "especie": "Lepidoptera",
+    "informacion": "Insecto nocturno relacionado con las mariposas.",
+    "habitat": "Bosques, jardines y zonas urbanas cerca de luz artificial.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Moth.jpg"
+  },
+
+  {
+    "nombre": "Chinche de cama",
+    "especie": "Cimex lectularius",
+    "informacion": "Insecto parásito que se alimenta de sangre humana.",
+    "habitat": "Principalmente en viviendas, colchones y hoteles.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Bedbug.jpg"
+  },
+  {
+    "nombre": "Pulga",
+    "especie": "Siphonaptera",
+    "informacion": "Parásito que salta grandes distancias.",
+    "habitat": "En animales domésticos y hogares humanos.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Flea.jpg"
+  },
+  {
+    "nombre": "Escarabajo pelotero",
+    "especie": "Scarabaeidae",
+    "informacion": "Conocido por formar bolas de estiércol.",
+    "habitat": "Zonas rurales, sabanas y áreas con ganado.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Dung_beetle.jpg"
+  },
+  {
+    "nombre": "Ciempiés falso (tijereta)",
+    "especie": "Dermaptera",
+    "informacion": "Insecto con pinzas en la parte trasera.",
+    "habitat": "Jardines, suelos húmedos y debajo de piedras.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Earwig.jpg"
+  },
+  {
+    "nombre": "Insecto palo",
+    "especie": "Phasmatodea",
+    "informacion": "Insecto que imita ramas para camuflarse.",
+    "habitat": "Bosques tropicales y subtropicales.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Stick_insect.jpg"
+  },
+
+  {
+    "nombre": "Insecto hoja",
+    "especie": "Phylliidae",
+    "informacion": "Imita hojas para evitar depredadores.",
+    "habitat": "Selvas tropicales del sudeste asiático.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Leaf_insect.jpg"
+  },
+  {
+    "nombre": "Mosca de la fruta",
+    "especie": "Drosophila melanogaster",
+    "informacion": "Insecto pequeño usado en estudios científicos.",
+    "habitat": "Frutas en descomposición y hogares humanos.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Fruit_fly.jpg"
+  },
+  {
+    "nombre": "Escarabajo ciervo",
+    "especie": "Lucanus cervus",
+    "informacion": "Escarabajo con grandes mandíbulas.",
+    "habitat": "Bosques de Europa, especialmente en madera en descomposición.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Stag_beetle.jpg"
+  },
+  {
+    "nombre": "Abejorro",
+    "especie": "Bombus",
+    "informacion": "Abeja grande y peluda, excelente polinizador.",
+    "habitat": "Campos, jardines y zonas agrícolas.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Bumblebee.jpg"
+  },
+  {
+    "nombre": "Mosca tse-tsé",
+    "especie": "Glossina",
+    "informacion": "Mosca africana transmisora de enfermedades.",
+    "habitat": "África subsahariana en zonas rurales y sabanas.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Tsetse_fly.jpg"
+  },
+
+  {
+    "nombre": "Langosta",
+    "especie": "Locusta migratoria",
+    "informacion": "Insecto que forma plagas destructivas.",
+    "habitat": "África, Asia y Medio Oriente en zonas secas.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Locust.jpg"
+  },
+  {
+    "nombre": "Chicharra",
+    "especie": "Cicadidae",
+    "informacion": "Insecto conocido por su sonido fuerte.",
+    "habitat": "Árboles en zonas cálidas y templadas.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Cicada.jpg"
+  },
+  {
+    "nombre": "Escarabajo japonés",
+    "especie": "Popillia japonica",
+    "informacion": "Plaga que daña cultivos y plantas.",
+    "habitat": "América del Norte y Asia en jardines y campos.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Japanese_beetle.jpg"
+  },
+  {
+    "nombre": "Mosca azul",
+    "especie": "Calliphora",
+    "informacion": "Mosca asociada a materia en descomposición.",
+    "habitat": "Ambientes urbanos y rurales en todo el mundo.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Blowfly.jpg"
+  },
+  {
+    "nombre": "Escarabajo bombardero",
+    "especie": "Brachinus",
+    "informacion": "Expulsa sustancias químicas para defenderse.",
+    "habitat": "Suelos húmedos en varias regiones del mundo.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Bombardier_beetle.jpg"
+  },
+
+  {
+    "nombre": "Mosquito tigre",
+    "especie": "Aedes albopictus",
+    "informacion": "Mosquito invasor transmisor de enfermedades.",
+    "habitat": "Zonas urbanas y tropicales con agua estancada.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Aedes_albopictus.jpg"
+  },
+  {
+    "nombre": "Escarabajo Hércules",
+    "especie": "Dynastes hercules",
+    "informacion": "Uno de los escarabajos más grandes del mundo.",
+    "habitat": "Selvas tropicales de América Central y del Sur.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Hercules_beetle.jpg"
+  },
+  {
+    "nombre": "Mariposa azul",
+    "especie": "Morpho",
+    "informacion": "Mariposa de color azul brillante.",
+    "habitat": "Selvas tropicales de América.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Morpho_butterfly.jpg"
+  },
+  {
+    "nombre": "Avispa parasitoide",
+    "especie": "Ichneumonidae",
+    "informacion": "Deposita huevos en otros insectos.",
+    "habitat": "Bosques y jardines en todo el mundo.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Ichneumon_wasp.jpg"
+  },
+  {
+    "nombre": "Escarabajo de fuego",
+    "especie": "Pyrochroa",
+    "informacion": "Escarabajo rojo brillante.",
+    "habitat": "Bosques europeos bajo cortezas.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Fire_beetle.jpg"
+  },
+
+  {
+    "nombre": "Mosca de mayo",
+    "especie": "Ephemeroptera",
+    "informacion": "Insecto con vida adulta muy corta.",
+    "habitat": "Ríos y lagos limpios.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mayfly.jpg"
+  },
+  {
+    "nombre": "Escarabajo acuático",
+    "especie": "Dytiscidae",
+    "informacion": "Depredador acuático.",
+    "habitat": "Lagos, estanques y ríos.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Diving_beetle.jpg"
+  },
+  {
+    "nombre": "Chinche apestosa",
+    "especie": "Pentatomidae",
+    "informacion": "Produce mal olor como defensa.",
+    "habitat": "Cultivos y viviendas.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Stink_bug.jpg"
+  },
+  {
+    "nombre": "Escarabajo del pan",
+    "especie": "Stegobium paniceum",
+    "informacion": "Plaga de alimentos almacenados.",
+    "habitat": "Cocinas y almacenes.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Drugstore_beetle.jpg"
+  },
+  {
+    "nombre": "Mosca caballo",
+    "especie": "Tabanidae",
+    "informacion": "Mosca que se alimenta de sangre.",
+    "habitat": "Zonas rurales con animales.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Horsefly.jpg"
+  },
+
+  {
+    "nombre": "Escarabajo tigre",
+    "especie": "Cicindelinae",
+    "informacion": "Depredador rápido y agresivo.",
+    "habitat": "Suelos arenosos y abiertos.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Tiger_beetle.jpg"
+  },
+  {
+    "nombre": "Mosca hover",
+    "especie": "Syrphidae",
+    "informacion": "Imita abejas para defensa.",
+    "habitat": "Jardines y flores.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Hoverfly.jpg"
+  },
+  {
+    "nombre": "Abeja carpintera",
+    "especie": "Xylocopa",
+    "informacion": "Excava madera para hacer nidos.",
+    "habitat": "Zonas urbanas y rurales con madera.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Carpenter_bee.jpg"
+  },
+  {
+    "nombre": "Escarabajo de alfombra",
+    "especie": "Anthrenus",
+    "informacion": "Plaga doméstica.",
+    "habitat": "Casas y textiles.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Carpet_beetle.jpg"
+  },
+  {
+    "nombre": "Mosca escorpión",
+    "especie": "Mecoptera",
+    "informacion": "Tiene cola similar a escorpión.",
+    "habitat": "Bosques húmedos.",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Scorpionfly.jpg"
+  }
+]

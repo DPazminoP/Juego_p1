@@ -41,9 +41,10 @@ export default function CatalogoScreen({navigation}:any) {
         renderItem={({ item }) => (
           <TouchableOpacity 
             style={styles.card} 
-            /*onPress={() => navigation.navigate("Bottom", { screen: "PBichos" })}*/
-            
-          >
+            onPress={() => {                                    
+              navigation.navigate('Bottom', {screen: 'PBichos'})
+          }}>
+
             <Image source={{ uri: item.image }} style={styles.image} />
             <Text style={styles.name}>{item.name}</Text>
             <Text style={styles.genre}>Género: {item.genre}</Text>
