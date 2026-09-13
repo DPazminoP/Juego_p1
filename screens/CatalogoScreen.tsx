@@ -1,24 +1,27 @@
-import { StyleSheet, Text, View, ImageBackground, FlatList, Image, Button, TouchableOpacity } from 'react-native'
-import React, { useEffect, useState } from 'react'
-import { Juegos } from '../types/Juegos'
-import gamesData from '../data/juegos_catalogo_ppd.json'
-import { useNavigation } from '@react-navigation/native';
+import { StyleSheet, Text, View, ImageBackground, FlatList, Image, TouchableOpacity } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Juegos } from '../types/Juegos';
+import gamesData from '../data/juegos_catalogo_ppd.json';
 
-export default function CatalogoScreen({navigation}:any) {
+type Props = {
+  navigation: any;
+};
+
+export default function CatalogoScreen({ navigation }: Props) {
   const [juegos, setJuegos] = useState<Juegos[]>([]);
-  //const navigation = useNavigation();
 
   useEffect(() => {
     setJuegos(gamesData.juegos);
-    }, [])
-  
+  }, []);
 
   return (
-    <ImageBackground source={{uri: "https://i.postimg.cc/zDQtrv6Q/pikura-pixel-art-7284052-1920.png"}} style={styles.container}>
-      
-        <Text style={styles.title}>🎮 Catálogo de Juegos 🎮</Text>
-        
-        {/* Botones de navegación */}
+    <ImageBackground 
+      source={{ uri: "https://i.postimg.cc/zDQtrv6Q/pikura-pixel-art-7284052-1920.png" }} 
+      style={styles.container}
+    >
+      <Text style={styles.title}>🎮 Catálogo de Juegos 🎮</Text>
+
+      {/* Botones de navegación */}
       <View style={styles.buttonsRow}>
         <TouchableOpacity 
           style={styles.button} 
@@ -35,25 +38,24 @@ export default function CatalogoScreen({navigation}:any) {
         </TouchableOpacity>
       </View>
 
-        <FlatList
+      <FlatList
         data={juegos}
         keyExtractor={(item, index) => index.toString()}
+        numColumns={2} 
+        columnWrapperStyle={styles.row} 
         renderItem={({ item }) => (
           <TouchableOpacity 
             style={styles.card} 
-            onPress={() => {                                    
-              navigation.navigate('Bottom', {screen: 'PBichos'})
-          }}>
-
+            onPress={() => navigation.navigate('Bottom', { screen: 'PBichos' })}
+          >
             <Image source={{ uri: item.image }} style={styles.image} />
             <Text style={styles.name}>{item.name}</Text>
-            <Text style={styles.genre}>Género: {item.genre}</Text>
+            <Text style={styles.genre}>🎭 {item.genre}</Text>
           </TouchableOpacity>
         )}
       />
-      
     </ImageBackground>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -85,26 +87,34 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
   },
+  row: {
+    justifyContent: "space-around",
+  },
   card: {
     backgroundColor: "#fff",
     marginVertical: 10,
-    padding: 10,
+    padding: 8,
     borderRadius: 10,
     alignItems: "center",
+    flex: 1,
+    marginHorizontal: 5,
   },
   image: {
-    width: 200,
-    height: 120,
-    borderRadius: 10,
-    marginBottom: 10,
+    width: 100,
+    height: 80,
+    borderRadius: 8,
+    marginBottom: 8,
   },
   name: {
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: "bold",
     color: "#1E3A8A",
+    textAlign: "center",
+    marginBottom: 4,
   },
   genre: {
-    fontSize: 14,
+    fontSize: 12,
     color: "#333",
+    textAlign: "center",
   },
-})
+});

@@ -3,7 +3,7 @@ import React from 'react';
 import { RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-// 👇 Define el tipo de parámetros del stack
+
 type RootStackParamList = {
   InformacionInsectos: { 
     insecto: { 
