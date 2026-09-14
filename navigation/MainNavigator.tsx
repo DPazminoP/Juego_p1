@@ -8,13 +8,14 @@ import PerfilScreen from '../screens/PerfilScreen';
 import PortadaBichosScreen from '../screens/PortadaBichosScreen';
 import InsectosScreen from '../screens/InsectosScreen';
 import InformacionInsectosScreen from '../screens/InformacionInsectosScreen';
-
+import WelcomeScreen from '../screens/WelcomeScreen';
 const Stack=createStackNavigator()
 const Bottom=createBottomTabNavigator()
 
 function MyStack(){
     return(
-        <Stack.Navigator initialRouteName='Catalogo'>
+        <Stack.Navigator initialRouteName='Welcome'>
+            <Stack.Screen name='Welcome' component={WelcomeScreen}/>
             <Stack.Screen name='Catalogo' component={CatalogoScreen}/>
             <Stack.Screen name='Favoritos' component={FavoritosScreen}/>
             <Stack.Screen name='PerfilUser' component={PerfilScreen}/>

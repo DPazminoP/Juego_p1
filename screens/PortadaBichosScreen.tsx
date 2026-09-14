@@ -15,7 +15,7 @@ type Props = {
 
 export default function PortadaBichosScreen({ navigation }: Props) {
   // 👇 Hook para reproducir audio local
-  const player = useAudioPlayer(require('../assets/sounds/Tono1_Bichos.mp3'));
+  const player = useAudioPlayer(require('../assets/sounds/freesound_community-cricket-chirp-101026.mp3'));
 
   const playLocalSound = () => {
     player.play();
@@ -23,7 +23,7 @@ export default function PortadaBichosScreen({ navigation }: Props) {
 
   return (
     <ImageBackground 
-      source={{ uri: "https://i.postimg.cc/65nwNxKQ/Portada3.jpg" }} 
+      source={{ uri: "https://i.postimg.cc/76609R7D/Fondonatural1.jpg" }} 
       style={styles.container}
     >
       <View style={styles.row}>
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     height: 100,
   },
   button: {
-    backgroundColor: '#FACC15',
+    //backgroundColor: '#060605',
     paddingVertical: 12,
     paddingHorizontal: 10,
     borderRadius: 20,

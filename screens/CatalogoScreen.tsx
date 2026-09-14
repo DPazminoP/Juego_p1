@@ -16,7 +16,7 @@ export default function CatalogoScreen({ navigation }: Props) {
 
   return (
     <ImageBackground 
-      source={{ uri: "https://i.postimg.cc/zDQtrv6Q/pikura-pixel-art-7284052-1920.png" }} 
+      source={{ uri: "https://i.postimg.cc/fTMYykqw/Fonfo2.jpg" }} 
       style={styles.container}
     >
       <Text style={styles.title}>🎮 Catálogo de Juegos 🎮</Text>
@@ -36,12 +36,19 @@ export default function CatalogoScreen({ navigation }: Props) {
         >
           <Text style={styles.buttonText}>Favoritos</Text>
         </TouchableOpacity>
+
+        <TouchableOpacity 
+          style={styles.button} 
+          onPress={() => navigation.navigate("Welcome")}
+        >
+          <Text style={styles.buttonText}>Salir</Text>
+        </TouchableOpacity>
       </View>
 
       <FlatList
         data={juegos}
         keyExtractor={(item, index) => index.toString()}
-        numColumns={2} 
+        numColumns={3} 
         columnWrapperStyle={styles.row} 
         renderItem={({ item }) => (
           <TouchableOpacity 

@@ -6,7 +6,7 @@ export default function PerfilScreen({navigation}:any) {
   
 
   return (
-    <ImageBackground source={{uri: "https://i.postimg.cc/zDQtrv6Q/pikura-pixel-art-7284052-1920.png"}} style={styles.container}>
+    <ImageBackground source={{uri: "https://i.postimg.cc/fTMYykqw/Fonfo2.jpg"}} style={styles.container}>
         
           {/* Foto de perfil */}
           <Image 
@@ -26,6 +26,12 @@ export default function PerfilScreen({navigation}:any) {
             onPress={() => navigation.navigate("Catalogo")}
           >
             <Text style={styles.buttonText}>Volver al Catálogo</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity 
+            style={styles.button2} 
+            onPress={() => navigation.navigate("Welcome")}>
+            <Text style={styles.buttonText}>Salir</Text>
           </TouchableOpacity>
         
     </ImageBackground>
@@ -62,6 +68,18 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 20,
     borderRadius: 10,
+    marginVertical: 10, // espacio arriba y abajo
+    marginLeft: 198, // espacio a los lados
+    //marginRight:100,
+  },
+  button2: {
+    backgroundColor: "#FACC15",
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 10,
+    marginVertical: 10, // espacio arriba y abajo
+    marginLeft: 198, // espacio a los lados
+    marginRight:100,
   },
   buttonText: {
     color: "#1E3A8A",

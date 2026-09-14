@@ -13,7 +13,7 @@ export default function FavoritosScreen({navigation}:any) {
   
 
   return (
-    <ImageBackground source={{uri: "https://i.postimg.cc/zDQtrv6Q/pikura-pixel-art-7284052-1920.png"}} style={styles.container}>
+    <ImageBackground source={{uri: "https://i.postimg.cc/fTMYykqw/Fonfo2.jpg"}} style={styles.container}>
       
         <Text style={styles.title}>🎮 Lista de Juegos Favoritos 🎮</Text>
         
@@ -31,6 +31,12 @@ export default function FavoritosScreen({navigation}:any) {
           onPress={() => navigation.navigate("Catalogo")}
         >
           <Text style={styles.buttonText}>Volver al catalogo</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+          style={styles.button} 
+          onPress={() => navigation.navigate("Welcome")}>
+            <Text style={styles.buttonText}>Salir</Text>
         </TouchableOpacity>
       </View>
 

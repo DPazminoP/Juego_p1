@@ -19,7 +19,7 @@ type Props = {
 };
 
 export default function Tarjeta({ informacion }: Props) {
-  const navigation = useNavigation<StackNavigationProp<RootStackParamList, 'InfoBichos'>>();
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList, "InfoBichos">>();
   const [ocultar, setOcultar] = useState(false);
 
   // 👇 Hook para reproducir sonido
