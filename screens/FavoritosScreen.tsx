@@ -62,9 +62,8 @@ export default function FavoritosScreen({navigation}:any) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 10,
-    backgroundColor: "rgb(4, 4, 4)",
+    flex: 1,                // ocupa toda la pantalla
+    
   },
   title: {
     fontSize: 28,

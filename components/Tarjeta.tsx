@@ -1,12 +1,23 @@
 import { Image, Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import { useAudioPlayer } from 'expo-audio';
 
-// 👇 Define el tipo de navegación
-type RootStackParamList = {
-  InfoBichos: { insecto: { nombre: string; especie: string; imagen: string; sonido?: any } };
+// 👇 Define las rutas del BottomTabNavigator
+type BottomTabParamList = {
+  PBichos: undefined;
+  ListaBichos: undefined;
+  InfoBichos: { 
+    insecto: { 
+      nombre: string; 
+      especie: string; 
+      imagen: string; 
+      habitat: string; 
+      informacion: string; 
+      sonido?: string;
+    } 
+  };
 };
 
 type Props = {
@@ -14,17 +25,19 @@ type Props = {
     nombre: string;
     especie: string;
     imagen: string;
-    sonido?: any;
+    habitat: string;
+    informacion: string;
+    sonido?: string;
   };
 };
 
 export default function Tarjeta({ informacion }: Props) {
-  const navigation = useNavigation<StackNavigationProp<RootStackParamList, "InfoBichos">>();
+  const navigation = useNavigation<BottomTabNavigationProp<BottomTabParamList, "InfoBichos">>();
   const [ocultar, setOcultar] = useState(false);
 
-  // 👇 Hook para reproducir sonido
+  // 👇 Hook para reproducir sonido dinámico con fallback
   const player = useAudioPlayer(
-    informacion.sonido ? informacion.sonido : require('../assets/sounds/Tono1_Bichos.mp3')
+    informacion.sonido ? { uri: informacion.sonido } : require('../assets/sounds/error1.mp3')
   );
 
   const playCry = () => {
@@ -34,35 +47,22 @@ export default function Tarjeta({ informacion }: Props) {
   return (
     <TouchableOpacity style={styles.container} onPress={() => setOcultar(true)}>
       <View style={styles.listaContainer}>
-        <View style={styles.infoContainer}>
-          <Text style={styles.idText}>{informacion.nombre}</Text>
-        </View>
+        <Text style={styles.idText}>{informacion.nombre}</Text>
         <View style={styles.imageContainer}>
           <Image source={{ uri: informacion.imagen }} style={styles.imageList} />
         </View>
-        <View style={styles.infoContainer}>
-          <Text style={styles.name}>{informacion.especie}</Text>
-        </View>
       </View>
 
-      <Modal visible={ocultar} transparent={true}>
+      <Modal visible={ocultar} transparent>
         <View style={styles.modal}>
           <View style={styles.modalContainer}>
-            <View style={styles.descriptionContainer}>
-              <Text style={styles.modalName}>{informacion.nombre}</Text>
-              <View style={{ width: '100%', alignItems: 'center' }}>
-                <Text style={styles.modalId}>Especie: {informacion.especie}</Text>
-              </View>
-            </View>
+            <Text style={styles.modalName}>{informacion.nombre}</Text>
+            <Text style={styles.modalId}>Especie: {informacion.especie}</Text>
 
             {/* Botón para reproducir sonido */}
             <TouchableOpacity style={styles.spriteContainer} onPress={playCry}>
               <Image style={styles.spriteImage} source={{ uri: informacion.imagen }} />
             </TouchableOpacity>
-
-            <View style={styles.descriptionContainer}>
-              <Text style={styles.modalStats}>Especie: {informacion.especie}</Text>
-            </View>
 
             <View style={styles.modalButtonContainer}>
               <TouchableOpacity
@@ -87,88 +87,88 @@ export default function Tarjeta({ informacion }: Props) {
 }
 
 const styles = StyleSheet.create({
-  container: { padding: 1, margin: 1, alignItems: 'center' },
+  container: { padding: 2, margin: 2, alignItems: 'center' },
   listaContainer: {
-    alignItems: 'flex-start', // 👈 corregido
-    backgroundColor: 'rgb(255, 255, 255)',
+    backgroundColor: '#a4e1a5',
     padding: 10,
     borderRadius: 10,
-    borderWidth: 5,
-    borderColor: '#766d1a',
+    borderWidth: 2,
+    borderColor: '#080804',
+    alignItems: 'center',
   },
-  imageList: { width: 90, height: 90 },
+  imageList: {
+    width: 90,
+    height: 90,
+    resizeMode: 'contain', // 👈 asegura que la imagen se vea completa
+    //resizeMode: 'cover', // 👈 alternativa si quieres llenar el espacio
+    //resizeMode: 'stretch', // 👈 alternativa si quieres estirar
+  },
   imageContainer: {
-    backgroundColor: '#f8f3f3',
-    borderRadius: 50,
-    padding: 3,
-    marginVertical: 3,
-    borderWidth: 1,
-    borderColor: '#766d1a',
-  },
-  name: {
-    fontSize: 12,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    flexWrap: 'wrap',
-    marginBottom: 5,
-    textTransform: 'capitalize',
-  },
-  infoContainer: {
-    backgroundColor: '#caaf14',
-    paddingHorizontal: 5,
+    backgroundColor: '#f8f3f3e4',
+    borderRadius: 5,
+    padding: 5,
     marginVertical: 5,
+    marginHorizontal: 5,
     borderWidth: 1,
-    borderColor: '#766d1a',
+    borderColor: '#0b0b0a',
   },
-  idText: { fontWeight: 'bold', fontSize: 15, color: '#282703' },
+
+  /////////////////////////////////////
+  /////////////////////////////////////
+  //////// Para el modal //////////////
+  /////////////////////////////////////
+  /////////////////////////////////////
+
+  idText: {
+    fontWeight: 'bold',
+    fontSize: 15,
+    color: '#ecece7',
+    backgroundColor: '#0e450a',
+    marginBottom: 5,
+    paddingHorizontal: 12,
+    paddingVertical: 2,
+  },
   spriteContainer: {
     backgroundColor: '#f8f3f3',
-    borderRadius: 200,
-    padding: 10,
-    marginVertical: 5,
+    borderRadius: 20,
+    padding: 30,
+    marginVertical: 10,
     borderWidth: 1,
     borderColor: '#766d1a',
   },
-  spriteImage: { width: 270, height: 300, resizeMode: 'contain' },
+  spriteImage: {
+    width: 250,
+    height: 280,
+    resizeMode: 'contain', // 👈 mantiene proporción
+    //resizeMode: 'cover',
+    //resizeMode: 'stretch',
+  },
   modalContainer: {
     alignItems: 'center',
     width: '90%',
-    backgroundColor: 'rgb(255, 255, 255)',
-    padding: 40,
+    backgroundColor: '#fff',
+    padding: 30,
     borderRadius: 20,
-    borderWidth: 10,
+    borderWidth: 2,
     borderColor: '#937722',
   },
   modal: { backgroundColor: '#00000067', flex: 1, justifyContent: 'center', alignItems: 'center' },
   modalName: {
-    fontSize: 28,
+    fontSize: 26,
     fontWeight: 'bold',
     textAlign: 'center',
-    flexWrap: 'wrap',
     marginBottom: 5,
     textTransform: 'capitalize',
   },
-  modalId: { fontSize: 20, marginBottom: 5, color: '#060303', textAlign: 'center', alignSelf: 'stretch' },
-  descriptionContainer: {
-    width: '100%',
-    backgroundColor: '#caaf14',
-    borderRadius: 12,
-    padding: 10,
-    marginVertical: 0,
-    borderWidth: 1,
-    borderColor: '#7c710f',
-  },
-  modalStats: { fontSize: 18, marginTop: 5, textAlign: 'center', color: '#333' },
-  modalButtonContainer: { flexDirection: 'row', justifyContent: 'center', width: '100%', marginTop: 5 },
+  modalId: { fontSize: 18, marginBottom: 10, color: '#060303', textAlign: 'center' },
+  modalButtonContainer: { flexDirection: 'row', justifyContent: 'center', marginTop: 10 },
   modalButton: {
     backgroundColor: '#937722',
-    paddingVertical: 12,
-    paddingHorizontal: 30,
+    paddingVertical: 10,
+    paddingHorizontal: 25,
     borderRadius: 10,
     margin: 5,
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#766d1a',
   },
-  modalButtonText: { color: '#fff', fontSize: 18, fontWeight: 'bold' },
+  modalButtonText: { color: '#fff', fontSize: 16, fontWeight: 'bold' },
 });

@@ -40,9 +40,8 @@ export default function PerfilScreen({navigation}:any) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 10,
-    backgroundColor: "rgb(4, 4, 4)",
+    flex: 1,                // ocupa toda la pantalla
+    
   },
   avatar: {
     width: 120,

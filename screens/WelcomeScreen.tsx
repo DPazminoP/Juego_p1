@@ -52,13 +52,10 @@ export default function PortadaBichosScreen({ navigation }: any) {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        margin: 5,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: "rgb(4, 4, 4)",
-        borderRadius: 10,
-        padding: 8,
+        flex: 1,                // ocupa toda la pantalla
+        //resizeMode: 'cover',    // asegura que la imagen se expanda sin deformarse
+        //justifyContent: 'center', // centra contenido verticalmente
+        //alignItems: 'center',     // centra contenido horizontalmente
     },
     row: {
         flexDirection: 'row',
@@ -72,7 +69,7 @@ const styles = StyleSheet.create({
         height: 150,
     },
     imgbt: {
-        width: 110,
+        width: 310,
         height: 100,
     },
     button: {
@@ -81,7 +78,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         borderRadius: 20,
         alignItems: 'center',
-        marginTop: 20,
+        marginTop: 200,
     },
     butonTxt: {
         tintColor:'#83530a',
