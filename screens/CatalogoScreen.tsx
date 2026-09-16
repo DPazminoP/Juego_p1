@@ -1,7 +1,10 @@
-import { StyleSheet, Text, View, ImageBackground, FlatList, Image, TouchableOpacity } from 'react-native';
+// CatalogoScreen.tsx
+import { StyleSheet, Text, View, ImageBackground, FlatList, TouchableOpacity } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { Juegos } from '../types/Juegos';
 import gamesData from '../data/juegos_catalogo_ppd.json';
+import GameCard from '../components/GameCard';
+import { startAfter } from 'firebase/database';
 
 type Props = {
   navigation: any;
@@ -44,16 +47,7 @@ export default function CatalogoScreen({ navigation }: Props) {
         columnWrapperStyle={styles.row}
         contentContainerStyle={styles.listContainer}
         renderItem={({ item }) => (
-          <TouchableOpacity 
-            style={styles.card} 
-            onPress={() => navigation.navigate('Bottom', { screen: 'PBichos' })}
-          >
-            <Image source={{ uri: item.image }} style={styles.image} />
-            <View style={styles.textContainer}>
-              <Text style={styles.name}>{item.name}</Text>
-              <Text style={styles.genre}>🎭 {item.genre}</Text>
-            </View>
-          </TouchableOpacity>
+          <GameCard juego={item} navigation={navigation} />
         )}
       />
     </ImageBackground>
@@ -61,9 +55,7 @@ export default function CatalogoScreen({ navigation }: Props) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1, // ocupa toda la pantalla
-  },
+  container: { flex: 1 },
   title: {
     fontSize: 28,
     fontWeight: "bold",
@@ -88,41 +80,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
   },
-  row: {
-    justifyContent: "space-between", // distribución uniforme
-  },
-  listContainer: {
-    paddingBottom: 20,
-  },
-  card: {
-    backgroundColor: "#fff",
-    marginVertical: 10,
-    marginHorizontal: 5,
-    borderRadius: 10,
-    flex: 1,
-    overflow: "hidden",
-  },
-  image: {
-    width: "100%",
-    height: 100,
-    resizeMode: "cover",
-  },
-  textContainer: {
-    backgroundColor: "#FACC15",
-    paddingVertical: 6,
-    alignItems: "center",
-  },
-  name: {
-    fontSize: 14,
-    fontWeight: "bold",
-    color: "#1E3A8A",
-    textAlign: "center",
-    flexWrap: "wrap",
-  },
-  genre: {
-    fontSize: 12,
-    color: "#333",
-    textAlign: "center",
-    marginTop: 2,
-  },
+  row: { justifyContent: "space-between" },
+  listContainer: { paddingBottom: 20 },
 });
