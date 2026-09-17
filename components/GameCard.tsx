@@ -1,7 +1,8 @@
-// GameCard.tsx
 import React, { useState } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, Modal } from 'react-native';
 import { Juegos } from '../types/Juegos';
+import { ref, set } from 'firebase/database';
+import { db } from '../firebase/config';
 
 type Props = {
     juego: Juegos;
@@ -11,14 +12,24 @@ type Props = {
 export default function GameCard({ juego, navigation }: Props) {
     const [visible, setVisible] = useState(false);
 
+    function guardarFavorito() {
+        set(ref(db, 'favoriteGames/' + juego.id), {
+            nombre: juego.nombre,
+            photo: juego.image,
+            genero: juego.genero,
+        });
+        setVisible(false);
+        navigation.navigate('Favoritos');
+    }
+
     return (
         <>
         {/* Tarjeta del juego */}
         <TouchableOpacity style={styles.card} onPress={() => setVisible(true)}>
             <Image source={{ uri: juego.image }} style={styles.image} />
             <View style={styles.textContainer}>
-            <Text style={styles.name}>{juego.name}</Text>
-            <Text style={styles.genre}>🎭 {juego.genre}</Text>
+            <Text style={styles.name}>{juego.nombre}</Text>
+            <Text style={styles.genre}>{juego.genero} .</Text>
             </View>
         </TouchableOpacity>
 
@@ -26,9 +37,9 @@ export default function GameCard({ juego, navigation }: Props) {
         <Modal visible={visible} transparent animationType="fade">
             <View style={styles.modalOverlay}>
             <View style={styles.modalContainer}>
-                <Text style={styles.modalTitle}>{juego.name}</Text>
+                <Text style={styles.modalTitle}>{juego.nombre}</Text>
                 <Image source={{ uri: juego.image }} style={styles.modalImage} />
-                <Text style={styles.modalGenre}>Género: {juego.genre}</Text>
+                <Text style={styles.modalGenre}>Género: {juego.genero}</Text>
 
                 {/* Botones dentro del modal */}
                 <View style={styles.modalButtons}>
@@ -36,20 +47,14 @@ export default function GameCard({ juego, navigation }: Props) {
                     style={styles.modalButton} 
                     onPress={() => {
                     setVisible(false);
-                    navigation.navigate('Bottom', { screen: 'PBichos' }); // 👈 ejemplo de navegación
+                    navigation.navigate('Bottom', { screen: 'PBichos' });
                     }}
                 >
                     <Text style={styles.modalButtonText}>Ir al juego</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity 
-                    style={styles.modalButton} 
-                    onPress={() => {
-                    setVisible(false);
-                    navigation.navigate('Favoritos'); // 👈 ejemplo: agregar a favoritos
-                    }}
-                >
-                    <Text style={styles.modalButtonText}>Agregar a favoritos</Text>
+                <TouchableOpacity style={styles.modalButton} onPress={guardarFavorito}>
+                    <Text style={styles.modalButtonText}>A favoritos</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.modalButton} onPress={() => setVisible(false)}>
@@ -90,7 +95,7 @@ const styles = StyleSheet.create({
         flexWrap: "wrap",
     },
     genre: {
-        fontSize: 12,
+        fontSize: 7,
         color: "#333",
         textAlign: "center",
         marginTop: 2,

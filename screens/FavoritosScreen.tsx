@@ -1,70 +1,64 @@
-import { StyleSheet, Text, View, ImageBackground, FlatList, Image, Button, TouchableOpacity } from 'react-native'
-import React, { useEffect, useState } from 'react'
-import { Juegos } from '../types/Juegos'
-import gamesData from '../data/juegos_catalogo_ppd.json'
-import { useNavigation } from '@react-navigation/native';
-export default function FavoritosScreen({navigation}:any) {
-  const [juegos, setJuegos] = useState<Juegos[]>([]);
-  //const navigation = useNavigation();
+import { StyleSheet, Text, View, ImageBackground, FlatList, TouchableOpacity } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import FavoriteCard from '../components/FavoriteCard';
+import { onValue, ref } from 'firebase/database';
+import { db } from '../firebase/config';
+
+export default function FavoritosScreen({ navigation }: any) {
+  const [favoritos, setFavoritos] = useState<any[]>([]);
 
   useEffect(() => {
-    setJuegos(gamesData.juegos);
-    }, [])
-  
+    leerFavoritos();
+  }, []);
+
+  function leerFavoritos() {
+    const starCountRef = ref(db, 'favoriteGames/');
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        // 👇 Convertimos objeto en array con id incluido
+        const lista = Object.entries(data).map(([id, value]: any) => ({
+          id,
+          ...value,
+        }));
+        setFavoritos(lista);
+      } else {
+        setFavoritos([]);
+      }
+    });
+  }
 
   return (
-    <ImageBackground source={{uri: "https://i.postimg.cc/fTMYykqw/Fonfo2.jpg"}} style={styles.container}>
-      
-        <Text style={styles.title}>🎮 Lista de Juegos Favoritos 🎮</Text>
-        
-        {/* Botones de navegación */}
+    <ImageBackground source={{ uri: "https://i.postimg.cc/fTMYykqw/Fonfo2.jpg" }} style={styles.container}>
+      <Text style={styles.title}>🎮 Lista de Juegos Favoritos 🎮</Text>
+
+      {/* Botones de navegación */}
       <View style={styles.buttonsRow}>
-        <TouchableOpacity 
-          style={styles.button} 
-          onPress={() => navigation.navigate("PerfilUser")}
-        >
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("PerfilUser")}>
           <Text style={styles.buttonText}>Perfil</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity 
-          style={styles.button} 
-          onPress={() => navigation.navigate("Catalogo")}
-        >
-          <Text style={styles.buttonText}>Volver al catalogo</Text>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Catalogo")}>
+          <Text style={styles.buttonText}>Volver al catálogo</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity 
-          style={styles.button} 
-          onPress={() => navigation.navigate("Welcome")}>
-            <Text style={styles.buttonText}>Salir</Text>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Welcome")}>
+          <Text style={styles.buttonText}>Salir</Text>
         </TouchableOpacity>
       </View>
 
-        <FlatList
-        data={juegos}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => (
-          <TouchableOpacity 
-            style={styles.card} 
-            /*onPress={() => navigation.navigate("Bottom", { screen: "PBichos" })}*/
-            
-          >
-            <Image source={{ uri: item.image }} style={styles.image} />
-            <Text style={styles.name}>{item.name}</Text>
-            <Text style={styles.genre}>Género: {item.genre}</Text>
-          </TouchableOpacity>
-        )}
+      {/* Lista de favoritos */}
+      <FlatList
+        data={favoritos}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <FavoriteCard datos={item} navigation={navigation}x />}
       />
-      
     </ImageBackground>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,                // ocupa toda la pantalla
-    
-  },
+  container: { flex: 1 },
   title: {
     fontSize: 28,
     fontWeight: "bold",
@@ -88,26 +82,4 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
   },
-  card: {
-    backgroundColor: "#fff",
-    marginVertical: 10,
-    padding: 10,
-    borderRadius: 10,
-    alignItems: "center",
-  },
-  image: {
-    width: 200,
-    height: 120,
-    borderRadius: 10,
-    marginBottom: 10,
-  },
-  name: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "#1E3A8A",
-  },
-  genre: {
-    fontSize: 14,
-    color: "#333",
-  },
-})
+});

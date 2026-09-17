@@ -39,7 +39,7 @@ export default function Tarjeta({ informacion }: Props) {
   const player = useAudioPlayer(
     informacion.sonido ? { uri: informacion.sonido } : require('../assets/sounds/error1.mp3')
   );
-
+//
   const playCry = () => {
     player.play();
   };
