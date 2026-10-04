@@ -37,7 +37,7 @@ export default function PortadaBichosScreen({ navigation }: any) {
                 style={styles.button}
                 onPress={() => {
                 playLocalSound();
-                navigation.navigate('Catalogo');
+                navigation.navigate('NoLogueado');
                 }}
             >
                 <Image

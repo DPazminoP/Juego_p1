@@ -5,7 +5,7 @@ import { db } from '../firebase/config';
 
 export default function FavoriteCard(props: any) {
     let favorito = props.datos;
-    const { navigation } = props; // 👈 recibimos navigation desde FavoritosScreen
+    const { navigation } = props; 
 
     function eliminar(id: string) {
         remove(ref(db, 'favoriteGames/' + id));

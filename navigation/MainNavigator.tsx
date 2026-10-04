@@ -9,6 +9,9 @@ import PortadaBichosScreen from '../screens/PortadaBichosScreen';
 import InsectosScreen from '../screens/InsectosScreen';
 import InformacionInsectosScreen from '../screens/InformacionInsectosScreen';
 import WelcomeScreen from '../screens/WelcomeScreen';
+import LoginScreen from '../screens/LoginScreen';
+import RegistroScreen from '../screens/RegistroScreen';
+import CatalogoNoLoginScreen from '../screens/CatalogoNoLoginScreen';
 const Stack=createStackNavigator()
 const Bottom=createBottomTabNavigator()
 
@@ -19,6 +22,11 @@ function MyStack(){
             <Stack.Screen name='Catalogo' component={CatalogoScreen}/>
             <Stack.Screen name='Favoritos' component={FavoritosScreen}/>
             <Stack.Screen name='PerfilUser' component={PerfilScreen}/>
+            <Stack.Screen name='Ingresar' component={LoginScreen}/>
+            <Stack.Screen name='Registrarse' component={RegistroScreen}/>
+            
+            <Stack.Screen name='NoLogueado' component={CatalogoNoLoginScreen}/>
+            
             <Stack.Screen name='Bottom' component={MyBottom}/>
         </Stack.Navigator>
     )

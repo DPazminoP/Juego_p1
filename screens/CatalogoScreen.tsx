@@ -1,4 +1,3 @@
-// CatalogoScreen.tsx
 import { StyleSheet, Text, View, ImageBackground, FlatList, TouchableOpacity } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { Juegos } from '../types/Juegos';
@@ -38,6 +37,8 @@ export default function CatalogoScreen({ navigation }: Props) {
           <Text style={styles.buttonText}>Salir</Text>
         </TouchableOpacity>
       </View>
+
+      
 
       {/* Catálogo en 3 columnas tipo grid */}
       <FlatList
